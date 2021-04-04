@@ -10,27 +10,27 @@ class Subdivision(models.Model):
                                                                 ("department", "department"),
                                                                 ("mega-faculty", "mega-faculty"),
                                                                 ("other", "other")])
-    id_subdivision = models.ForeignKey("Subdivision", on_delete=models.CASCADE)
+    id_subdivision = models.ForeignKey("Subdivision", on_delete=models.CASCADE, blank=True, null=True)
     def __str__(self):
         return self.subdivision_name
 class Employee(AbstractUser):
-    second_name = models.CharField(max_length=40)
-    position = models.CharField(max_length=40)
-    start_year = models.IntegerField(max_length=4)
-    home_address = models.CharField()
-    subdivision = models.ForeignKey(Subdivision, on_delete=models.CASCADE)
+    second_name = models.CharField(max_length=40, blank=True, null=True)
+    position = models.CharField(max_length=40, blank=True, null=True)
+    start_year = models.IntegerField(max_length=4, blank=True, null=True)
+    home_address = models.CharField(max_length=50, blank=True, null=True)
+    subdivision = models.ForeignKey(Subdivision, on_delete=models.CASCADE, blank=True, null=True)
     def __str__(self):
-        return self.first_name + " " + self.second_name + " " +self.last_name
+        return self.first_name + " " + self.last_name
 
     REQUIRED_FIELDS = ['first_name', 'last_name']
 class Unit_of_property(models.Model):
     inventory_number = models.BigIntegerField(unique=True)
     date_of_registration = models.DateField()
     revaluation_year = models.IntegerField(max_length=4, blank=True, null=True)
-    value_after_revaluation = models.FloatField()
+    cost = models.FloatField()
     lifetime = models.IntegerField()
     def __str__(self):
-        return self.inventory_number
+        return str(self.inventory_number)
 
 class Classroom(models.Model):
     number = models.IntegerField()
@@ -44,17 +44,17 @@ class Classroom(models.Model):
     employee = models.ManyToManyField(settings.AUTH_USER_MODEL, through="Property_liability")
     unit_of_property = models.ManyToManyField(Unit_of_property, through="Property_list")
     def __str__(self):
-        return self.number
+        return str(self.number)
 class Property_liability(models.Model):
     start_date = models.DateField()
     end_date = models.DateField(blank=True, null=True)
     classroom = models.ForeignKey(Classroom, on_delete=models.CASCADE)
     employee = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     def __str__(self):
-        return self.classroom + " " + self.employee
+        return self.classroom.__str__() + " " + self.employee.__str__()
 class Property_list(models.Model):
     unit_of_property = models.ForeignKey(Unit_of_property, on_delete=models.CASCADE)
     classroom = models.ForeignKey(Classroom, on_delete=models.CASCADE)
     date_of_creation = models.DateField()
     def __str__(self):
-        return self.unit_of_property + " " + self.classroom
+        return self.unit_of_property.__str__() + " " + self.classroom.__str__()
