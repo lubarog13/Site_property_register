@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classroom</title>
+</head>
+<body>
+    <h1>{{object}}</h1>
+    <h2>{{object.subdivision}}</h2>
+    <p><strong>Area: </strong> {{object.area}} m.</p>
+    <p><strong>Appointment: </strong>{{object.appointment}}</p>
+    <p><strong>Employers: </strong>
+        <ul>
+        {% for employee in object.employee.all %}
+        <li>{{employee}}</li>
+        {%endfor%}
+    </ul>
+    </p>
+    <p><a href="{% url 'class_view' object.subdivision.id%}"> Go back </a></p>
+    <p><a href="{% url 'sub_list' %}"> To the main </a></p>
+</body>
+</html>

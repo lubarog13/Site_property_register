@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Subdivision</title>
+</head>
+<body>
+    <h1>{{ object }}</h1>
+    <p><strong>Telephone number: </strong>{{object.phone_number}}</p>
+    <p><strong>Type of subdivision: </strong>{{object.subdivision_type}}</p>
+    <p><strong>Refers to </strong>{{object.id_subdivision}}</p>
+    <p><a href="{% url 'sub_list' %}"> Get back </a></p>
+    <p><a href="{% url 'sub_update' object.id %}">Update</a> </p>
+    <p><a href="{% url 'sub_delete' object.id %}">Delete</a> </p>
+    <p><a href="{% url 'class_list' object.id %}">Classrooms</a> </p>
+</body>
+</html>

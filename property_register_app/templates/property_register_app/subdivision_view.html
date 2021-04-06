@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of subdivisions</title>
+</head>
+<body>
+<h1>List of subdivisions</h1>
+<button><a href="{% url 'sub_create' %}"> Create new </a></button>
+<ul>
+    {% for object in object_list %}.
+    <a href="{% url 'sub_view' object.id %}"><li>{{object.subdivision_name}}</li></a>
+    <li>{{object.phone_number}}</li>
+    <li>{{object.subdivision_type}}</li>
+    <li>{{object.id_subdivision}}</li>
+    <hr/>
+    {% empty %}
+    <li>No objects yet</li>
+    {% endfor %}
+</ul>
+</body>
+</html>

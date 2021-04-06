@@ -2,21 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ac5b10f-0ef9-42ae-97aa-3612064dcb6f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../django_progect_Rogozina/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../django_progect_Rogozina/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../django_progect_Rogozina/django_progect_Rogozina/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../django_progect_Rogozina/django_progect_Rogozina/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../django_progect_Rogozina/progect_first_app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/../django_progect_Rogozina/progect_first_app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../django_progect_Rogozina/progect_first_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../django_progect_Rogozina/progect_first_app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../django_progect_Rogozina/progect_first_app/templates/progect_first_app/owner.html" beforeDir="false" afterPath="$PROJECT_DIR$/../django_progect_Rogozina/progect_first_app/templates/progect_first_app/owner.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../django_progect_Rogozina/progect_first_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../django_progect_Rogozina/progect_first_app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property_register_app/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/property_register_app/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/property_register_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/property_register_app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property_register_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/property_register_app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reestr_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/reestr_project/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -28,6 +30,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -41,6 +44,14 @@
       <option name="presentableId" value="Default" />
       <updated>1617095005820</updated>
     </task>
+    <task id="LOCAL-00001" summary="Заполнены таблицы">
+      <created>1617542094655</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1617542094682</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -54,5 +65,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Заполнены таблицы" />
+    <option name="LAST_COMMIT_MESSAGE" value="Заполнены таблицы" />
   </component>
 </project>

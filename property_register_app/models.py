@@ -13,6 +13,9 @@ class Subdivision(models.Model):
     id_subdivision = models.ForeignKey("Subdivision", on_delete=models.CASCADE, blank=True, null=True)
     def __str__(self):
         return self.subdivision_name
+
+
+
 class Employee(AbstractUser):
     second_name = models.CharField(max_length=40, blank=True, null=True)
     position = models.CharField(max_length=40, blank=True, null=True)
