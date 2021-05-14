@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ac5b10f-0ef9-42ae-97aa-3612064dcb6f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/property_register_app/serialisers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/property_register_app/templates/property_register_app/classroom_confirm_delete.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/property_register_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/property_register_app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property_register_app/templates/property_register_app/classroom_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/property_register_app/templates/property_register_app/classroom_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property_register_app/templates/property_register_app/classroom_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/property_register_app/templates/property_register_app/classroom_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property_register_app/templates/property_register_app/classroom_view.html" beforeDir="false" afterPath="$PROJECT_DIR$/property_register_app/templates/property_register_app/classroom_view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property_register_app/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/property_register_app/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property_register_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/property_register_app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/property_register_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/property_register_app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reestr_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/reestr_project/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reestr_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/reestr_project/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -35,6 +43,32 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\12\reestr_project\property_register_app" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unittests for property_register_app.tests.ViewsTestCase" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="reestr_project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;property_register_app.tests.ViewsTestCase&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Unittests for property_register_app.tests.ViewsTestCase" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -51,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617542094682</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Добавлен CRUD для подразделения + добавление, показ для аудиторий">
+      <created>1617715801809</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1617715801809</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -68,6 +109,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Заполнены таблицы" />
-    <option name="LAST_COMMIT_MESSAGE" value="Заполнены таблицы" />
+    <MESSAGE value="Добавлен CRUD для подразделения + добавление, показ для аудиторий" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлен CRUD для подразделения + добавление, показ для аудиторий" />
   </component>
 </project>

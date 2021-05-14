@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Classroom</title>
+    <title>List of classrooms</title>
 </head>
 <body>
-    <h1>{{object}}</h1>
-    <h2>{{object.subdivision}}</h2>
+    <h1>Classrooms</h1>
+    {%for object in object_list %}
+    <a href="{%url 'class_view' object.id%}"> <h2>{{object}}</h2></a>
+    <h3>{{object.subdivision}}</h3>
     <p><strong>Area: </strong> {{object.area}} m.</p>
     <p><strong>Appointment: </strong>{{object.appointment}}</p>
     <p><strong>Employers: </strong>
@@ -16,9 +18,8 @@
         {%endfor%}
     </ul>
     </p>
-    <p><a href="{% url 'class_up' object.id %}">Update</a></p>
-    <p><a href="{% url 'class_del' object.id %}">Delete</a></p>
-    <p><a href="{% url 'class_view' object.subdivision.id%}"> Go back </a></p>
+    {% endfor %}
+    <p><a href="{% url 'class_create'%}">New classroom</a></p>
     <p><a href="{% url 'sub_list' %}"> To the main </a></p>
 </body>
 </html>

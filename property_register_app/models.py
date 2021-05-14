@@ -49,15 +49,15 @@ class Classroom(models.Model):
     def __str__(self):
         return str(self.number)
 class Property_liability(models.Model):
-    start_date = models.DateField()
+    start_date = models.DateField(blank=True, null=True)
     end_date = models.DateField(blank=True, null=True)
-    classroom = models.ForeignKey(Classroom, on_delete=models.CASCADE)
+    classroom = models.ForeignKey(Classroom, on_delete=models.CASCADE, blank=True, null=True)
     employee = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     def __str__(self):
         return self.classroom.__str__() + " " + self.employee.__str__()
 class Property_list(models.Model):
     unit_of_property = models.ForeignKey(Unit_of_property, on_delete=models.CASCADE)
     classroom = models.ForeignKey(Classroom, on_delete=models.CASCADE)
-    date_of_creation = models.DateField()
+    date_of_creation = models.DateField(blank=True, null=True)
     def __str__(self):
         return self.unit_of_property.__str__() + " " + self.classroom.__str__()

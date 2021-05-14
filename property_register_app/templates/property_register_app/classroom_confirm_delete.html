@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete classroom</title>
+</head>
+<body>
+     <form method="POST", enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>Do you want to delete "{{object}}"? </p>
+        {{ form.as_p }}
+    <input type="submit" value="Confirm">
+    </form>
+     <p><a href="{% url 'class_all' %}"> Back to list </a></p>
+    <p><a href="{% url 'sub_list' %}"> To the main </a></p>
+</body>
+</html>

@@ -9,6 +9,7 @@
     {%for data in dataset %}
     <a href="{%url 'class_view' data.id%}"> <p>{{data}}</p></a>
     {% endfor %}
+    <p><a href="{% url 'class_all'%}">All classrooms</a></p>
     <p><a href="{% url 'class_create'%}">New classroom</a></p>
     <p><a href="{% url 'sub_view' subd.id %}">Get back</a></p>
 </body>
