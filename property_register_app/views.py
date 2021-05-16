@@ -83,7 +83,7 @@ class SubdivisionAPIView(APIView):
         subdivisions = Subdivision.objects.all()
         serializer = SubdivisionSerializer(subdivisions, many=True)
         return Response({"Subdivisions": serializer.data})
-class ClassroomAPIView(APIView):
+class ClassroomsAPIView(APIView):
     def get(self, request):
         classrooms = Classroom.objects.all()
         serializer = ClassroomSerializer(classrooms, many=True)
@@ -122,7 +122,7 @@ class ClassroomUpdateAPIView(UpdateAPIView):
     serializer_class = ClassroomSerializer
     queryset = Classroom.objects.all()
 
-class ClassroomRetriveAPIView(RetrieveAPIView):
+class ClassroomRetrieveAPIView(RetrieveAPIView):
     serializer_class = ClassroomSerializer
     queryset = Classroom.objects.all()
 
@@ -151,7 +151,7 @@ class PropertyLiabilityUpdateAPIView(UpdateAPIView):
 
 
 class PropertyLiabilityRetrieveAPIView(RetrieveAPIView):
-    serializer_class = PropertyLiabilityCreateSerializer
+    serializer_class = PropertyLiabilitySerializer
     queryset = Property_liability.objects.all()
 
 class PropertyLiabilityDeleteAPIView(DestroyAPIView):
@@ -194,3 +194,12 @@ class ClassesASubdivision(APIView):
         serializer1 = SubdivisionSerializer(subdivisions, many=True)
         serializer2 = EmployeeSerializer(employees, many=True)
         return Response({"Classrooms": serializer.data, "Subdivisions": serializer1.data, "Employees": serializer2.data})
+
+class ClassroomAPIView(APIView):
+    def get(self, request, id_class):
+        classroom = Classroom.objects.get(pk=id_class)
+        serializer = ClassroomSerializer(classroom, many=False)
+        property_liabilities = Property_liability.objects.filter(classroom=id_class)
+        serializer_e = PropertyLiabilitySerializer(property_liabilities, many=True)
+        print(serializer_e.data)
+        return Response({"Classroom":serializer.data, "Employees": serializer_e.data})
