@@ -14,6 +14,7 @@ class SubdivisionCreateSerializer(serializers.ModelSerializer):
         model=Subdivision
         fields = "__all__"
 class EmployeeSerializer(serializers.ModelSerializer):
+    subdivision = SubdivisionSerializer(many=False)
     class Meta:
         model = Employee
         fields="__all__"
@@ -43,7 +44,12 @@ class PropertyListCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Property_liability
         fields = "__all__"
-
+class PropertyListSerializer(serializers.ModelSerializer):
+    unit_of_property = UnitOfPropertySerializer(many=False)
+    classroom = ClassroomCreateSerializer(many=False)
+    class Meta:
+        model = Property_list
+        fields = "__all__"
 
 class UnitOfPropertyCreateSerializer(serializers.ModelSerializer):
     class Meta:

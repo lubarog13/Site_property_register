@@ -88,7 +88,7 @@ class ClassroomsAPIView(APIView):
         classrooms = Classroom.objects.all()
         serializer = ClassroomSerializer(classrooms, many=True)
         return Response({"Classrooms": serializer.data})
-class EmployeeAPIView(APIView):
+class EmployeesAPIView(APIView):
     def get(self, request):
         employees = Employee.objects.all()
         serializer = EmployeeSerializer(employees, many=True)
@@ -203,3 +203,35 @@ class ClassroomAPIView(APIView):
         serializer_e = PropertyLiabilitySerializer(property_liabilities, many=True)
         print(serializer_e.data)
         return Response({"Classroom":serializer.data, "Employees": serializer_e.data})
+class EmployeeAPIView(APIView):
+    def get(self, request, id_employee):
+        employee = Employee.objects.get(pk=id_employee)
+        serializer = EmployeeSerializer(employee, many=False)
+        classrooms = Classroom.objects.filter(employee = employee)
+        property_lists = Property_list.objects.filter(classroom__in = classrooms)
+        serializer1 = PropertyListSerializer(property_lists, many=True)
+        return  Response({"Employee": serializer.data, "Property_list": serializer1.data})
+class SearchAPIView(APIView):
+    def get(self, request, search_string):
+        employee = Employee.objects.filter(Q(first_name__contains=search_string) | Q(last_name__contains=search_string) | Q(second_name__contains=search_string) | Q(position__contains=search_string))
+        serializer = EmployeeSerializer(employee, many=True)
+        try:
+            classroom = Classroom.objects.filter(Q(appointment__contains=search_string) | Q(number__contains=(int)(search_string)))
+        except ValueError:
+            classroom = Classroom.objects.filter(appointment__contains=search_string)
+        serializer1 = ClassroomSerializer(classroom, many=True)
+        subdivision = Subdivision.objects.filter(Q(subdivision_name__contains=search_string) | Q(subdivision_type__contains=search_string))
+        serializer2 = SubdivisionSerializer(subdivision, many=True)
+        try:
+            unitOfProperty = Unit_of_property.objects.filter(inventory_number__contains=(int)(search_string))
+        except ValueError:
+            unitOfProperty = None
+        serializer3 = UnitOfPropertySerializer(unitOfProperty, many=True)
+        return Response({"Employee": serializer.data, "Classroom": serializer1.data, "Subdivision":serializer2.data, "Unit_of_property":serializer3.data})
+class PropertyAPIView(APIView):
+    def get(self, request, id_un):
+        unit_of_property = Unit_of_property.objects.get(pk=id_un)
+        classrooms = Classroom.objects.filter(unit_of_property=unit_of_property)
+        serializer = UnitOfPropertyCreateSerializer(unit_of_property, many=False)
+        serializer1 = ClassroomSerializer(classrooms, many=True)
+        return Response({"Classroom":serializer1.data, "Unit_of_property": serializer.data})

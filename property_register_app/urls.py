@@ -14,10 +14,11 @@ urlpatterns = [
     # path('classrooms_all/', views.ClassroomAllView.as_view(), name = 'class_all'),
     # path('classroom/<int:pk>/update', views.ClassroomUpdateView.as_view(), name='class_up'),
     # path('classroom/<int:pk>/delete', views.ClassroomDeleteView.as_view(), name='class_del'),
+    path('property/<int:id_un>/', views.PropertyAPIView.as_view()),
     path('subdivisions/', views.SubdivisionAPIView.as_view(), name='sub_api'),
     path('subdivisions/create/', views.SubdivisionAPICreateView.as_view(), name='sub_api_create'),
     path('classroom/', views.ClassroomListAPIView.as_view(), name='class_api'),
-    path('employees/', views.EmployeeAPIView.as_view(), name='employee_api'),
+    path('employees/', views.EmployeesAPIView.as_view(), name='employee_api'),
     path('property/', views.UnitOfPropertyAPIView.as_view(), name='property_api'),
     path('property/create/', views.UnitOfPropertyCreateApiView.as_view(), name='property_api_create'),
     path('employees/create/', views.EmployeeCreateAPIView.as_view(), name='employee_api_create'),
@@ -25,4 +26,8 @@ urlpatterns = [
     path('property_liab/create/', views.PropertyLiabilityCreateAPIView.as_view(), name='prop_liab_create'),
     path('property_liab/<int:pk>/', views.PropertyLiabilityRetrieveAPIView.as_view(), name='prop_liab'),
     path('property_list/create/', views.PropertyListCreateAPIView.as_view(), name='prop_list_create'),
+    path('employee/<int:id_employee>/', views.EmployeeAPIView.as_view(), name='empl_api'),
+    path('search/<str:search_string>/', views.SearchAPIView.as_view()),
+
+
 ]
