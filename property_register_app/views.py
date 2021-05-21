@@ -4,7 +4,7 @@ from django.views.generic.list import ListView
 from property_register_app.models import *
 from django.db.models import Q
 from rest_framework.views import APIView
-from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView, UpdateAPIView, DestroyAPIView
+from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView, UpdateAPIView, DestroyAPIView, RetrieveUpdateAPIView, RetrieveDestroyAPIView
 from rest_framework.response import Response
 from .serialisers import *
 # Create your views here.
@@ -23,15 +23,16 @@ from .serialisers import *
 #         "id_subdivision"
 #     ]
 #     success_url = '/subdivision/'
-class SubdivisionAPICreateView(APIView):
-    def post(self, request):
-        subdivision = request.data.get("subdivision")
-        serializer = SubdivisionCreateSerializer(data=subdivision)
+class SubdivisionAPICreateView(CreateAPIView):
+    serializer_class = SubdivisionCreateSerializer
+    queryset = Subdivision.objects.all()
+class SubdivisionDestroyAPIView(RetrieveDestroyAPIView):
+    serializer_class = SubdivisionCreateSerializer
+    queryset = Subdivision.objects.all()
 
-        if serializer.is_valid(raise_exception=True):
-            subdivision_saved = serializer.save()
-
-        return Response({"Success": "Subdivision '{}' created succesfully.".format(subdivision_saved.title)})
+class SubdivisionUpdateAPIView(RetrieveUpdateAPIView):
+    serializer_class = SubdivisionCreateSerializer
+    queryset = Subdivision.objects.all()
 
 # class SubdivisionUpdateView(UpdateView):
 #     model = Subdivision
@@ -118,8 +119,8 @@ class UnitOfPropertyCreateApiView(CreateAPIView):
     queryset = Unit_of_property.objects.all()
 
 
-class ClassroomUpdateAPIView(UpdateAPIView):
-    serializer_class = ClassroomSerializer
+class ClassroomUpdateAPIView(RetrieveUpdateAPIView):
+    serializer_class = ClassroomCreateSerializer
     queryset = Classroom.objects.all()
 
 class ClassroomRetrieveAPIView(RetrieveAPIView):
@@ -127,25 +128,25 @@ class ClassroomRetrieveAPIView(RetrieveAPIView):
     queryset = Classroom.objects.all()
 
 
-class ClassroomDeleteAPIView(DestroyAPIView):
+class ClassroomDeleteAPIView(RetrieveDestroyAPIView):
     serializer_class = ClassroomSerializer
     queryset = Classroom.objects.all()
 
 
-class EmloyeeUpdateAPIView(UpdateAPIView):
-    serializer_class = EmployeeSerializer
+class EmloyeeUpdateAPIView(RetrieveUpdateAPIView):
+    serializer_class = EmployeeCreateSerializer
     queryset = Employee.objects.all()
 
 class EmloyeeRetriveAPIView(RetrieveAPIView):
     serializer_class = EmployeeSerializer
     queryset = Employee.objects.all()
 
-class EmloyeeDeleteAPIView(DestroyAPIView):
+class EmloyeeDeleteAPIView(RetrieveDestroyAPIView):
     serializer_class = EmployeeSerializer
     queryset = Employee.objects.all()
 
 
-class PropertyLiabilityUpdateAPIView(UpdateAPIView):
+class PropertyLiabilityUpdateAPIView(RetrieveUpdateAPIView):
     serializer_class = PropertyLiabilityCreateSerializer
     queryset = Property_liability.objects.all()
 
@@ -154,12 +155,12 @@ class PropertyLiabilityRetrieveAPIView(RetrieveAPIView):
     serializer_class = PropertyLiabilitySerializer
     queryset = Property_liability.objects.all()
 
-class PropertyLiabilityDeleteAPIView(DestroyAPIView):
+class PropertyLiabilityDeleteAPIView(RetrieveDestroyAPIView):
     serializer_class = PropertyLiabilityCreateSerializer
     queryset = Property_liability.objects.all()
 
 
-class UnitOfPropertyUpdateAPIView(UpdateAPIView):
+class UnitOfPropertyUpdateAPIView(RetrieveUpdateAPIView):
     serializer_class = UnitOfPropertySerializer
     queryset = Unit_of_property.objects.all()
 
@@ -167,11 +168,11 @@ class UnitOfPropertyRetrieveAPIView(RetrieveAPIView):
     serializer_class = UnitOfPropertySerializer
     queryset = Unit_of_property.objects.all()
 
-class UnitOfPropertyDeleteAPIView(DestroyAPIView):
+class UnitOfPropertyDeleteAPIView(RetrieveDestroyAPIView):
     serializer_class = UnitOfPropertySerializer
     queryset = Unit_of_property.objects.all()
 
-class PropertyListUpdateAPIView(UpdateAPIView):
+class PropertyListUpdateAPIView(RetrieveUpdateAPIView):
     serializer_class = PropertyListCreateSerializer
     queryset = Property_list.objects.all()
 
@@ -179,7 +180,7 @@ class PropertyListRetrieveAPIView(RetrieveAPIView):
     serializer_class = PropertyListCreateSerializer
     queryset = Property_list.objects.all()
 
-class PropertyListDeleteAPIView(DestroyAPIView):
+class PropertyListDeleteAPIView(RetrieveDestroyAPIView):
     serializer_class = PropertyListCreateSerializer
     queryset = Property_list.objects.all()
 class SubdivisionRetrieveAPIView(RetrieveAPIView):
