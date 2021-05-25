@@ -4,6 +4,7 @@
     <list default="true" id="2ac5b10f-0ef9-42ae-97aa-3612064dcb6f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property_register_app/serialisers.py" beforeDir="false" afterPath="$PROJECT_DIR$/property_register_app/serialisers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/property_register_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/property_register_app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/property_register_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/property_register_app/views.py" afterDir="false" />
     </list>
@@ -91,7 +92,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621160667793</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Доделала url для update/delete + поменяла функции">
+      <created>1621624978150</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1621624978150</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,6 +118,7 @@
     <MESSAGE value="Заполнены таблицы" />
     <MESSAGE value="Добавлен CRUD для подразделения + добавление, показ для аудиторий" />
     <MESSAGE value="Подкручены views и сериализаторы для вывода информации об аудитории" />
-    <option name="LAST_COMMIT_MESSAGE" value="Подкручены views и сериализаторы для вывода информации об аудитории" />
+    <MESSAGE value="Доделала url для update/delete + поменяла функции" />
+    <option name="LAST_COMMIT_MESSAGE" value="Доделала url для update/delete + поменяла функции" />
   </component>
 </project>

@@ -98,7 +98,7 @@ class UnitOfPropertyAPIView(APIView):
     def get(self, request):
         property = Unit_of_property.objects.all()
         serializer = UnitOfPropertySerializer(property, many=True)
-        return Response({"Unit of property: ": serializer.data})
+        return Response({"Unit_of_property": serializer.data})
 class ClassroomListAPIView(ListAPIView):
     serializer_class = ClassroomSerializer
     queryset = Classroom.objects.all()
@@ -202,8 +202,10 @@ class ClassroomAPIView(APIView):
         serializer = ClassroomSerializer(classroom, many=False)
         property_liabilities = Property_liability.objects.filter(classroom=id_class)
         serializer_e = PropertyLiabilitySerializer(property_liabilities, many=True)
+        property_lists = Property_list.objects.filter(classroom=id_class)
+        serializer_p = PropertyListSerializer(property_lists, many=True)
         print(serializer_e.data)
-        return Response({"Classroom":serializer.data, "Employees": serializer_e.data})
+        return Response({"Classroom":serializer.data, "Employees": serializer_e.data, "Lists":serializer_p.data})
 class EmployeeAPIView(APIView):
     def get(self, request, id_employee):
         employee = Employee.objects.get(pk=id_employee)
@@ -236,3 +238,6 @@ class PropertyAPIView(APIView):
         serializer = UnitOfPropertyCreateSerializer(unit_of_property, many=False)
         serializer1 = ClassroomSerializer(classrooms, many=True)
         return Response({"Classroom":serializer1.data, "Unit_of_property": serializer.data})
+class PropertyListRetrieveAPIVew(RetrieveAPIView):
+    serializer_class = PropertyListSerializer
+    queryset = Property_list.objects.all()

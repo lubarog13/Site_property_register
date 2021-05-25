@@ -35,7 +35,10 @@ urlpatterns = [
     path('property_list/update/<int:pk>/', views.PropertyListUpdateAPIView.as_view()),
     path('property_list/delete/<int:pk>/', views.PropertyListDeleteAPIView.as_view()),
     path('employee/<int:id_employee>/', views.EmployeeAPIView.as_view(), name='empl_api'),
-    path('employee/update/<int:id_employee>/', views.EmloyeeUpdateAPIView.as_view()),
-    path('employee/delete/<int:id_employee>/', views.EmloyeeDeleteAPIView.as_view()),
+    path('employee/update/<int:pk>/', views.EmloyeeUpdateAPIView.as_view()),
+    path('employee/delete/<int:pk>/', views.EmloyeeDeleteAPIView.as_view()),
     path('search/<str:search_string>/', views.SearchAPIView.as_view()),
+    path('property_list/<int:pk>/', views.PropertyListRetrieveAPIVew.as_view()),
+    path('property/update/<int:pk>/', views.UnitOfPropertyUpdateAPIView.as_view()),
+    path('property/delete/<int:pk>/', views.UnitOfPropertyDeleteAPIView.as_view())
 ]

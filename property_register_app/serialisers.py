@@ -32,17 +32,20 @@ class PropertyLiabilityCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Property_liability
         fields = "__all__"
-
-
 class ClassroomCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Classroom
         fields="__all__"
-
+class PropertyLiabilitySerializer(serializers.ModelSerializer):
+    employee = EmployeeSerializer(many=False)
+    classroom = ClassroomCreateSerializer(many=False)
+    class Meta:
+        model = Property_liability
+        fields = "__all__"
 
 class PropertyListCreateSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Property_liability
+        model = Property_list
         fields = "__all__"
 class PropertyListSerializer(serializers.ModelSerializer):
     unit_of_property = UnitOfPropertySerializer(many=False)
@@ -61,10 +64,4 @@ class ClassroomSerializer(serializers.ModelSerializer):
     subdivision = SubdivisionSerializer(many=False)
     class Meta:
         model=Classroom
-        fields = "__all__"
-
-class PropertyLiabilitySerializer(serializers.ModelSerializer):
-    employee = EmployeeSerializer(many=False)
-    class Meta:
-        model=Property_liability
         fields = "__all__"
