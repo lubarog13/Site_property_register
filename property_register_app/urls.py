@@ -1,9 +1,11 @@
-from django.urls import path
+from django.urls import path, include, re_path
 from property_register_app import views
 
 urlpatterns = [
+    path('auth/', include('djoser.urls')),
+    re_path(r'^auth/', include('djoser.urls.authtoken')),
     # path('subdivision/', views.SubdivisionList.as_view(), name='sub_list'),
-     path('subdivision/<int:pk>/', views.SubdivisionRetrieveAPIView.as_view(), name = 'sub_view'),
+    path('subdivision/<int:pk>/', views.SubdivisionRetrieveAPIView.as_view(), name = 'sub_view'),
     # path('subdivision_create/', views.SubdivisionCreateView.as_view(), name = 'sub_create'),
     # path('subdivision/<int:pk>/update/', views.SubdivisionUpdateView.as_view(), name = 'sub_update'),
     # path('subdivision/<int:pk>/delete/', views.SubdivisionDeleteView.as_view(), name = 'sub_delete'),
@@ -40,5 +42,5 @@ urlpatterns = [
     path('search/<str:search_string>/', views.SearchAPIView.as_view()),
     path('property_list/<int:pk>/', views.PropertyListRetrieveAPIVew.as_view()),
     path('property/update/<int:pk>/', views.UnitOfPropertyUpdateAPIView.as_view()),
-    path('property/delete/<int:pk>/', views.UnitOfPropertyDeleteAPIView.as_view())
+    path('property/delete/<int:pk>/', views.UnitOfPropertyDeleteAPIView.as_view()),
 ]
