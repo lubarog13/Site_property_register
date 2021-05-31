@@ -25,7 +25,7 @@ class Employee(AbstractUser):
     def __str__(self):
         return self.first_name + " " + self.last_name
 
-    REQUIRED_FIELDS = ['first_name', 'last_name']
+    REQUIRED_FIELDS = ['first_name', 'last_name', 'second_name', 'email']
 class Unit_of_property(models.Model):
     inventory_number = models.BigIntegerField(unique=True)
     date_of_registration = models.DateField()

@@ -4,8 +4,7 @@
     <list default="true" id="2ac5b10f-0ef9-42ae-97aa-3612064dcb6f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/property_register_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/property_register_app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reestr_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/reestr_project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/property_register_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/property_register_app/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621969616523</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Добавлена авторизация по токенам">
+      <created>1622393462627</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1622393462676</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -126,6 +132,7 @@
     <MESSAGE value="Подкручены views и сериализаторы для вывода информации об аудитории" />
     <MESSAGE value="Доделала url для update/delete + поменяла функции" />
     <MESSAGE value="Вечно я что-то забываю... Настроены url" />
-    <option name="LAST_COMMIT_MESSAGE" value="Вечно я что-то забываю... Настроены url" />
+    <MESSAGE value="Добавлена авторизация по токенам" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлена авторизация по токенам" />
   </component>
 </project>
