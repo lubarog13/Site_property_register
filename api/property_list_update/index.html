@@ -58,6 +58,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -460,10 +465,42 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          /property_list/update[PUT]
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         /property_list/update[PUT]
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#success-responses" class="md-nav__link">
+    Success Responses
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -578,15 +615,69 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#success-responses" class="md-nav__link">
+    Success Responses
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>/property_list/update[PUT]</h1>
-                
-                
+                <h1 id="_1">Изменить список имущества</h1>
+<p>Изменение списка имущества</p>
+<p><strong>URL</strong> : <code>property_list/create/&lt;int:id&gt;/</code></p>
+<p><strong>Method</strong> : <code>PUT</code>, <code>PATCH</code></p>
+<p><strong>Auth required</strong> : YES</p>
+<p><strong>Permissions required</strong> : YES</p>
+<p><strong>Data</strong> : <code>{}</code></p>
+<pre><code class="language-json">{
+  &quot;unit_of_property&quot;: &quot;&quot;,
+  &quot;classroom&quot;: &quot;&quot;,
+  &quot;date_of_creation&quot;: &quot;&quot;
+}
+</code></pre>
+<p><strong>Data constraints</strong> : <code>{}</code></p>
+<h2 id="success-responses">Success Responses</h2>
+<p><strong>Code</strong> : <code>200 OK</code></p>
+<p><strong>Content</strong> : <code>{}</code></p>
+<pre><code class="language-json">{
+    &quot;id&quot;: 18,
+    &quot;start_date&quot;: &quot;2020-05-04&quot;,
+    &quot;end_date&quot;: &quot;2021-05-04&quot;,
+    &quot;classroom&quot;: 8,
+    &quot;employee&quot;: 4
+}
+</code></pre>
                 
               
               
