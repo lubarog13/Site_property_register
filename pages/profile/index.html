@@ -58,6 +58,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -244,10 +249,69 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          /profile
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         /profile
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Вход выполнен
+  </a>
+  
+    <nav class="md-nav" aria-label="Вход выполнен">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Обновление
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Выход из системы
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Вход не выполнен
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -908,15 +972,99 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Вход выполнен
+  </a>
+  
+    <nav class="md-nav" aria-label="Вход выполнен">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    Обновление
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    Выход из системы
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    Вход не выполнен
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>/profile</h1>
-                
-                
+                <h1 id="_1">Профиль</h1>
+<p>Профиль пользователя, страница выводит информацию о пользавателе
+с возможностью редактирования и выхода из системы.</p>
+<p><strong>URL</strong> : <code>/profile</code></p>
+<p><strong>Auth required</strong> : YES</p>
+<p><strong>Permissions required</strong> : YES</p>
+<h2 id="_2">Вход выполнен</h2>
+<p><strong>Data</strong>: <code>{}</code></p>
+<pre><code class="language-json">{
+    &quot;first_name&quot;: &quot;&quot;,
+    &quot;last_name&quot;: &quot;&quot;,
+    &quot;second_name&quot;: &quot;&quot;,
+    &quot;email&quot;: &quot;&quot;,
+    &quot;username&quot;: &quot;&quot;,
+    &quot;password&quot;: &quot;&quot;
+}
+</code></pre>
+<p>Обновление полей и выход из системы происходит при нажатии на
+соответствующих кнопках.</p>
+<h3 id="_3">Обновление</h3>
+<p>После обновления изменяются поля информации, переход на другую
+страницу не осуществляется</p>
+<h3 id="_4">Выход из системы</h3>
+<p>Сброс токенов, переход на страницу входа
+<strong>URL</strong>: <code>/auth</code></p>
+<h2 id="_5">Вход не выполнен</h2>
+<p>Переход на страницу входа
+<strong>URL</strong>: <code>/auth</code></p>
                 
               
               
